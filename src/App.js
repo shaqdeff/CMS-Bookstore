@@ -20,7 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route
-          path="/books"
+          path="/"
           element={
             (
               <Books
