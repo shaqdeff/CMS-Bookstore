@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './index.css';
 import Navbar from './components/Navbar';
 import Books from './components/Books';
+import Categories from './components/Categories';
 
 function App() {
   const books = [
@@ -29,6 +30,7 @@ function App() {
             )
           }
         />
+        <Route path="/categories" element={<Categories />} />
       </Routes>
     </div>
   );
