@@ -1,6 +1,6 @@
 # CMS-Bookstore
 
-CMS Bookstore is a single page web book list application where a user can add, remove and view books.
+CMS Bookstore is a single page book list application where a user can add, remove and view books.
 
 ## Built With
 
