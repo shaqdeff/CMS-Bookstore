@@ -1,6 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable  react/destructuring-assignment */
-function Books(props) {
+import AddBook from './AddBook';
+
+export default function Books(props) {
   return (
     <div className="books-container">
       <span className="book-type">{props.genre}</span>
@@ -9,8 +11,7 @@ function Books(props) {
       <button type="button" className="remove-btn">
         Remove
       </button>
+      <AddBook />
     </div>
   );
 }
-
-export default Books;
