@@ -6,6 +6,19 @@ import Books from './components/Books';
 import books from './bookData';
 import Categories from './components/Categories';
 
+function displayBooks(books) {
+  return (
+    books.map((book) => (
+      <Books
+        key={book.id}
+        genre={book.genre}
+        title={book.title}
+        author={book.author}
+      />
+    ))
+  );
+}
+
 function App() {
   return (
     <div className="container">
@@ -13,15 +26,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
-            (
-              <Books
-                genre={books[0].genre}
-                title={books[0].title}
-                author={books[0].author}
-              />
-            )
-          }
+          element={displayBooks(books)}
         />
         <Route path="/categories" element={<Categories />} />
       </Routes>
