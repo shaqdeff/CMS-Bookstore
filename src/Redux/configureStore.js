@@ -1,13 +1,12 @@
-import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
-/* eslint-disable import/extensions */
-import booksReducer from './Books/Books';
-import categoriesReducer from './Categories/Categories';
+import booksReducer from './books/Books';
+import categoriesReducer from './categories/Categories';
 
-const rootReducer = configureStore({
-  reducer: combineReducers({
+const store = configureStore({
+  reducer: {
     books: booksReducer,
     categories: categoriesReducer,
-  }),
+  },
 });
-export default rootReducer;
+
+export default store;
