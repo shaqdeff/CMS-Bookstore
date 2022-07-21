@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/Books';
+import { removeBook } from '../Redux/Books/Books';
 
 /* eslint-disable react/prop-types */
 /* eslint-disable  react/destructuring-assignment */

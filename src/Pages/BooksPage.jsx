@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Book from '../components/Book';
-import Forms from '../components/Form';
+import Book from '../components/Books';
+import AddBook from '../components/AddBook';
 
-const Books = () => {
+function Books() {
   // eslint-disable-next-line
   const books = useSelector((state) => state.books.books);
 
@@ -17,9 +17,9 @@ const Books = () => {
           author={book.author}
         />
       ))}
-      <Forms />
+      <AddBook />
     </div>
   );
-};
+}
 
 export default Books;

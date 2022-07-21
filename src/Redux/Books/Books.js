@@ -1,18 +1,18 @@
 import { v4 as uuidv4 } from 'uuid';
 
-export const ADD_BOOK = './books/ADD_BOOK';
-export const REMOVE_BOOK = './books/REMOVE_BOOK';
+export const ADD_BOOK = './Books/ADD_BOOK';
+export const REMOVE_BOOK = './Books/REMOVE_BOOK';
 
 export const initialState = {
   books: [
     {
       id: uuidv4(),
-      title: 'The One',
-      author: 'Jimmy Fitzimons',
+      title: 'Game of Thrones',
+      author: 'George R.R. Martin',
     },
   ],
 };
-
+/* eslint-disable  default-param-last */
 export default function booksReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_BOOK: {

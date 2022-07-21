@@ -1,31 +1,21 @@
 import React from 'react';
-import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
+import Books from './Pages/BooksPage';
+import Categories from './Pages/Categories';
 import Navbar from './components/Navbar';
-import Books from './components/Books';
-import AddBook from './components/AddBook';
-import books from './bookData';
-import Categories from './components/Categories';
 
+/* eslint-disable react/prop-types */
+/* eslint-disable  react/destructuring-assignment */
 function App() {
   return (
-    <div className="container">
+    <div>
       <Router>
         <Navbar />
         <Routes>
-          <Route
-            path="/"
-            element={books.map((book) => (
-              <Books
-                key={book.id}
-                title={book.title}
-                author={book.author}
-              />
-            ))}
-          />
+          <Route path="/" element={<Books />} />
           <Route path="/categories" element={<Categories />} />
         </Routes>
-        <AddBook />
       </Router>
     </div>
   );
