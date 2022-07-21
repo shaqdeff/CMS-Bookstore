@@ -10,6 +10,21 @@ export const initialState = {
       title: 'Game of Thrones',
       author: 'George R.R. Martin',
     },
+    {
+      id: uuidv4(),
+      title: 'Hunger Games',
+      author: 'Suzanne Collins',
+    },
+    {
+      id: uuidv4(),
+      title: 'The Subtle Art of Not Giving a F**k',
+      author: 'Mark Manson',
+    },
+    {
+      id: uuidv4(),
+      title: 'The Power of Now',
+      author: 'Eckhart Tolle',
+    },
   ],
 };
 /* eslint-disable  default-param-last */
