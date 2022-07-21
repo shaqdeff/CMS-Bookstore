@@ -1,37 +1,50 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-/* eslint-disable import/extensions */
-import { addBook } from '../Redux/Books/Books';
+import { addBook } from '../redux/books/Books';
 
 function AddBook() {
   const [state, setState] = useState({
     title: '',
     author: '',
   });
-
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleAddBook = (e) => {
     e.preventDefault();
     dispatch(addBook(state.title, state.author));
   };
 
-
-  const handleChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value });
-  }
-
-
   return (
-    <div>
-      <h1>Add New Book</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" id="title" placeholder="Book title" value={state.title} />
-        <input type="text" id="author" placeholder="Author" value={state.title} />
+    <div className="input-fields">
+      <h1>ADD NEW BOOK</h1>
+      <form className="forms " onSubmit={handleAddBook}>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value={state.title}
+          placeholder="Book title"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          id="author"
+          name="author"
+          value={state.author}
+          placeholder="Author"
+          onChange={handleChange}
+        />
         <button type="submit">Add Book</button>
       </form>
     </div>
   );
-};
+}
 
 export default AddBook;

@@ -1,17 +1,24 @@
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/Books';
+
 /* eslint-disable react/prop-types */
 /* eslint-disable  react/destructuring-assignment */
-import AddBook from './AddBook';
+function Book(props) {
+  const dispatch = useDispatch();
 
-export default function Books(props) {
   return (
     <div className="books-container">
-      <span className="genre">{props.genre}</span>
-      <h2 className="title">{props.title}</h2>
-      <p className="author">{props.author}</p>
-      <button type="button" className="remove-btn">
+      <h2 className="heading-text">{props.title}</h2>
+      <p className="book-author">{props.author}</p>
+      <button
+        type="button"
+        className="remove-btn"
+        onClick={() => dispatch(removeBook(props.id))}
+      >
         Remove
       </button>
-      <AddBook />
     </div>
   );
 }
+
+export default Book;
