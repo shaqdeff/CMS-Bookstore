@@ -2,10 +2,15 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Book from '../components/Books';
 import AddBook from '../components/AddBook';
+import { fetchBooks } from '../Redux/Books/Books';
 
 function Books() {
   // eslint-disable-next-line
   const books = useSelector((state) => state.books.books);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, []);
 
   return (
     <div>
