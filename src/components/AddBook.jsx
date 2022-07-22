@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../Redux/Books/Books';
 
+// eslint-disable-line
 function AddBook() {
   const [state, setState] = useState({
     title: '',
     author: '',
+    category: 'Horror',
   });
   const dispatch = useDispatch();
 
@@ -15,10 +18,21 @@ function AddBook() {
       [e.target.name]: e.target.value,
     });
   };
-
+  /* jshint camelcase: true */
   const handleAddBook = (e) => {
     e.preventDefault();
-    dispatch(addBook(state.title, state.author));
+    if (state.title.length > 0 && state.author.length) {
+      dispatch(
+        addBook({
+          title: state.title,
+          author: state.author,
+          item_id: uuidv4(),
+          category: state.category,
+        }),
+      );
+    }
+    state.title = '';
+    state.author = '';
   };
 
   return (
@@ -29,7 +43,6 @@ function AddBook() {
           type="text"
           id="title"
           name="title"
-          required="required"
           value={state.title}
           placeholder="Book title"
           onChange={handleChange}
@@ -38,7 +51,6 @@ function AddBook() {
           type="text"
           id="author"
           name="author"
-          required="required"
           value={state.author}
           placeholder="Author"
           onChange={handleChange}
