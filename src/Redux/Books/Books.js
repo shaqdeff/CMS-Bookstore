@@ -6,6 +6,7 @@ export const ADD_BOOK = './Books/ADD_BOOK';
 export const REMOVE_BOOK = './Books/REMOVE_BOOK';
 const BASEURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/kN7rR9TgYte9zFAAnguR/books';
 
+/* eslint-disable default-param-last */
 export default function booksReducer(state = [], action) {
   switch (action.type) {
     case ADD_BOOK:
@@ -32,7 +33,8 @@ export const fetchBooks = () => async (dispatch) => {
     return Promise.reject(err);
   }
 };
-/* jshint camelcase: true */
+
+/* eslint-disable camelcase */
 export const addBook = ({
   title, author, item_id, category,
 }) => async (dispatch) => {

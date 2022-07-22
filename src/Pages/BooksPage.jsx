@@ -1,12 +1,12 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from '../components/Books';
 import AddBook from '../components/AddBook';
 import { fetchBooks } from '../Redux/Books/Books';
 
 function Books() {
   // eslint-disable-next-line
-  const books = useSelector((state) => state.books.books);
+  const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchBooks());
@@ -14,14 +14,15 @@ function Books() {
 
   return (
     <div>
-      {books.map((book) => (
+      {Object.keys(books).map((bookId) => (
         <Book
-          key={book.id}
-          id={book.id}
-          title={book.title}
-          author={book.author}
+          key={bookId}
+          title={books[bookId][0].title}
+          author={books[bookId][0].author}
+          id={bookId}
         />
       ))}
+
       <AddBook />
     </div>
   );
