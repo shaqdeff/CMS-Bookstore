@@ -1,8 +1,8 @@
-const CHECK_STATUS = 'bookstore-cms/categories/CHECK_STATUS';
+const CHECK_STATUS = 'bookstore-cms/src/Redux/Categories/CHECK_STATUS';
 const initialState = [];
 
-/* eslint-disable default-param-last */
-function categoriesReducer(state = initialState, action) {
+/* eslint-disable  default-param-last */
+export default function categoriesReducer(state = initialState, action) {
   switch (action.type) {
     case CHECK_STATUS:
       return 'Under construction';
@@ -10,5 +10,7 @@ function categoriesReducer(state = initialState, action) {
       return state;
   }
 }
-export const checkStatus = () => ({ type: CHECK_STATUS });
-export default categoriesReducer;
+
+export const checkStatus = () => ({
+  type: CHECK_STATUS,
+});
