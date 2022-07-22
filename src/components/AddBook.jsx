@@ -29,6 +29,7 @@ function AddBook() {
           type="text"
           id="title"
           name="title"
+          required="required"
           value={state.title}
           placeholder="Book title"
           onChange={handleChange}
@@ -37,6 +38,7 @@ function AddBook() {
           type="text"
           id="author"
           name="author"
+          required="required"
           value={state.author}
           placeholder="Author"
           onChange={handleChange}

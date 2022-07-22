@@ -6,7 +6,6 @@ function Categories() {
   const [status, setStatus] = useState(false);
   const dispatch = useDispatch();
   const statusData = useSelector((state) => state.categories);
-  console.log(statusData);
   const handleCheckStatus = () => {
     dispatch(checkStatus());
     setStatus(true);
