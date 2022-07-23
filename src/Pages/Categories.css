@@ -1,0 +1,32 @@
+.container {
+  margin: 0 auto;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.status-btn {
+  background: #0290ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Roboto Slab', serif;
+  text-transform: uppercase;
+  padding: 1rem 0.75rem;
+  width: 20rem;
+  margin-top: -25rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.container p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #888888;
+  margin-top: 4rem;
+  text-transform: uppercase;
+}

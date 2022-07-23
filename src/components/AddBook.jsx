@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../Redux/Books/Books';
+import './AddBook.css';
 
 // eslint-disable-line
 function AddBook() {
   const [state, setState] = useState({
     title: '',
     author: '',
-    category: 'Horror',
+    category: 'Thriller',
   });
   const dispatch = useDispatch();
 
@@ -55,7 +56,7 @@ function AddBook() {
           placeholder="Author"
           onChange={handleChange}
         />
-        <button type="submit">Add Book</button>
+        <button type="submit" className="add-btn">Add Book</button>
       </form>
     </div>
   );
