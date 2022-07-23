@@ -5,6 +5,8 @@ CMS Bookstore is a single page book list application where a user can add, remov
 ## Built With
 
 - React
+- Redux
+- Bookstore API
 
 ## Getting Started
 
