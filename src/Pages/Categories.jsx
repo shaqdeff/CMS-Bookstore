@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkStatus } from '../Redux/Categories/Categories';
+import './Categories.css';
 
 function Categories() {
   const [status, setStatus] = useState(false);
@@ -11,8 +12,8 @@ function Categories() {
     setStatus(true);
   };
   return (
-    <div>
-      <button type="button" onClick={handleCheckStatus}>
+    <div className="container">
+      <button className="status-btn" type="button" onClick={handleCheckStatus}>
         Check Status
       </button>
       <p>{status ? statusData : ''}</p>
